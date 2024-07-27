@@ -16,7 +16,7 @@
 The following function `reverString` takes a string as input and returns its reverse.
 
 ### Code:
-
+### Method 1: Using a Loop
 ```javascript
 /**
  * Function to reverse a given string.
@@ -36,3 +36,19 @@ function reverString(str) {
 const finalVal = reverString("Happy");
 
 console.log('finalVal', finalVal);  // Output: yppaH
+```
+### Method 1: Built-In Method
+```javascript
+/**
+ * Function to reverse a given string using built-in methods.
+ * @param {string} str - The input string to be reversed.
+ * @returns {string} - The reversed string.
+ */
+function reverString(str) {
+    return str.split("").reverse().join("");
+}
+
+const finalVal = reverString("Happy");
+
+console.log('finalVal', finalVal);  // Output: yppaH
+```

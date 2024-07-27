@@ -135,7 +135,25 @@ const value = checkPalindrome('nitin'); // It is a palindrome, Nitin => it is no
 ```
 ## Q4 => Function to remove the duplicate elements from an array
 
-### Method 1 : using filter() method
+### Method 1 : using Set() method
+```javascript
+let arr =  [1,2,3,4,2,3,6,7];
+
+/**
+ * Removes duplicate elements from an array.
+ * 
+ * @param {Array} arr - The array from which duplicates need to be removed.
+ * @returns {Array} A new array with duplicates removed.
+ */
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+
+const finalVal = removeDuplicates(arr);
+console.log(finalVal); //[1,2,3,4,6,7]
+```
+
+### Method 2 : using filter() method
 
 ```javascript
 
@@ -154,7 +172,7 @@ const finalVal = removeDuplicates(arr);
 console.log(finalVal); //[1,2,3,4,5]
 
 ```
-### Method 2 : using indexOf() method
+### Method 3 : using indexOf() method
 
 ```javascript
 /**
@@ -178,3 +196,31 @@ const finalVal = removeDuplicates(arr)
 console.log(finalVal); //[ 1, 2, 3, 4, 6 ]
 
 ```
+## Q5 => Function to checks whether two strings are anagrams or not. [IMP]
+
+Anagrams : anagrams is word formed by rearranging the latter of another word.
+examples : cheater => teacher, listen => slient
+
+```javascript
+/**
+ * Checks if two strings are anagrams of each other.
+ * 
+ * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+ * typically using all the original letters exactly once.
+ * 
+ * @param {string} str1 - The first string to compare.
+ * @param {string} str2 - The second string to compare.
+ * @returns {boolean} - Returns true if the strings are anagrams, false otherwise.
+ */
+function areAnagrams(str1, str2) {
+    let firstStr = str1.split("").sort().join("");
+    let secondStr = str2.split("").sort().join("");
+    return firstStr === secondStr;
+}
+
+const finalVal = areAnagrams("cheater", "teacher");
+console.log(finalVal); // Output: true
+
+```
+
+

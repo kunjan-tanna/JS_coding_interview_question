@@ -52,3 +52,32 @@ const finalVal = reverString("Happy");
 
 console.log('finalVal', finalVal);  // Output: yppaH
 ```
+
+## Q2 => Function to longest word/string in a sentence
+
+/**
+ * Function to find the longest word in a given sentence.
+ * @param {string} str - The input sentence.
+ * @returns {string} - The longest word in the sentence.
+ */
+function findLongestWord(str) {
+    let splitStr = str.split(" ");
+    let longestWord = 0;
+    let strLong;
+    
+    console.log(splitStr);
+    
+    for (let i = 0; i < splitStr.length; i++) {
+        if (splitStr[i].length > longestWord) {
+            longestWord = splitStr[i].length;
+            strLong = splitStr[i];
+        }
+    }
+    return strLong;
+}
+
+const finalVal = findLongestWord("i want to be happy");
+
+console.log('finalVal', finalVal);  // Output: happy
+
+

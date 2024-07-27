@@ -80,5 +80,34 @@ const finalVal = findLongestWord("i want to be happy");
 
 console.log('finalVal', finalVal);  // Output: happy
 ```
+## Q3 => Function to check if the string is palindrome or not
+
+Palindrome : Sequence of numbers, string or latters to read left to right and right to left compare the exact same word like nitin, madam etc..
+
+```javascript
+/**
+ * Function to check if a given string is a palindrome.
+ * @param {string} string - The string to be checked.
+ * @returns {string} - A message indicating whether the string is a palindrome or not.
+ */
+function checkPalindrome(string) {
+
+    // Find the length of the string
+    const len = string.length;
+
+    // Loop through half of the string
+    for (let i = 0; i < len / 2; i++) {
+
+        // Check if the first and last characters of the string are the same
+        if (string[i] !== string[len - 1 - i]) {
+            return 'It is not a palindrome';
+        }
+    }
+    return 'It is a palindrome';
+}
+
+// Call the function with an example string
+const value = checkPalindrome('nitin'); // It is a palindrome, Nitin => it is not palindrome, Kunjan => it is not palindrome
+```
 
 

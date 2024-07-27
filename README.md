@@ -222,5 +222,150 @@ const finalVal = areAnagrams("cheater", "teacher");
 console.log(finalVal); // Output: true
 
 ```
+## Q6 => Function that returns the number of vowels in a string
 
+vowels = a,e,i,o,u
 
+```javascript
+const vowels = ["a", "e", "i", "o", "u"]
+
+/**
+ * Counts the number of vowels in a given string.
+ * 
+ * @param {string} str - The string to count vowels in.
+ * @returns {number} The number of vowels in the string.
+ */
+function countVowel(str) {
+    // initialize count
+    let count = 0;
+
+    // loop through string to test if each character is a vowel
+    for (let letter of str.toLowerCase()) {
+        if (vowels.includes(letter)) {
+            count++;
+        }
+    }
+
+    // return number of vowels
+    return count;
+}
+
+const result = countVowel("Hello World");
+
+console.log(result); // Output: 3
+```
+## Q7 => Function to find the largest number in an array (IMP)
+
+### Method 1 : using Math.max() Method
+
+```javascript
+/**
+ * Finds the largest number in an array.
+ *
+ * @param {number[]} arr - An array of numbers.
+ * @returns {number} The largest number in the array.
+ */
+function findLargeNumber(arr) {
+    let largeNumber = Math.max(...arr);
+    return largeNumber;
+}
+
+const finalVal = findLargeNumber([1, 2, 3, 4, 5]);
+console.log(finalVal); // 5
+```
+### Method 2 : using for loop
+
+```javascript
+/**
+ * Finds the largest number in an array.
+ *
+ * @param {number[]} arr - The array of numbers to search through.
+ * @return {number} The largest number in the array.
+ */
+function findLargeNumber(arr) {
+   let largeNumber = arr[0];
+   for (let i = 1; i < arr.length; i++) {
+       if (arr[i] > largeNumber) {
+           largeNumber = arr[i];
+       }
+   }
+   return largeNumber;
+}
+
+const finalVal = findLargeNumber([1, 2, 3, 9, 5]);
+console.log(finalVal); // 9
+```
+## Q8 => Function to check if a given number is prime or not (IMP)
+
+Prime : Prime numbers are numbers that have only 2 factors: 1 and themselves. For example, the first 5 prime numbers are 2, 3, 5, 7
+
+```javascript
+/**
+ * Checks if a given number is a prime number.
+ * 
+ * @param {number} number - The number to be checked.
+ * @returns {boolean} - Returns true if the number is prime, false otherwise.
+ */
+function isPrimeOrNot(number) {
+    var isPrime = true;
+    for(let i = 2; i < number; i++) {
+        if (number % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    return isPrime;
+}
+
+const finalVal = isPrimeOrNot(7);
+console.log(finalVal); //true && if 10 => return false
+
+```
+## Q9 => Function to calculate the factorial of a number (IMP)
+
+The factorial of a number is the product of all the numbers from 1 to that number. For example,
+
+factorial of 5 is equal to 1 * 2 * 3 * 4 * 5 = 120.
+
+```javascript
+/**
+ * Calculates the factorial of a given number.
+ *
+ * @param {number} number - The number to calculate the factorial of.
+ * @returns {number} The factorial of the given number.
+ */
+function factorialNumber(number) {
+    let factNo = 1;
+    
+    // If the number is 0, return 1 as 0! is 1
+    if (number == 0) {
+        return 1;
+    }
+
+    // Loop from 1 to the given number
+    for (let i = 1; i <= number; i++) {
+        factNo *= i;
+    }
+
+    return factNo;
+}
+
+const finalVal = factorialNumber(5);
+console.log(finalVal); // 120
+```
+## Q10 => program to remove all whitespace characters from a string
+
+```javascript
+/**
+ * Removes all white spaces from a given string.
+ *
+ * @param {string} str - The string from which white spaces should be removed.
+ * @returns {string} - The string with all white spaces removed.
+ */
+function removeWhiteSpace(str) {
+   return str.replace(/\s/g, '')
+}
+
+const finalVal = removeWhiteSpace("    Happy Kunjan");
+console.log(finalVal); // HappyKunjan
+```

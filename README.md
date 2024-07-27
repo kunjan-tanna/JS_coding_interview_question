@@ -84,6 +84,30 @@ console.log('finalVal', finalVal);  // Output: happy
 
 Palindrome : Sequence of numbers, string or latters to read left to right and right to left compare the exact same word like nitin, madam etc..
 
+### Method 1: ShortCut method
+```javascript
+/**
+ * Function to check if a given string is a palindrome.
+ * A palindrome is a word, phrase, number, or other sequence of characters that reads the same backward as forward.
+ *
+ * @param {string} string - The string to check for palindrome property.
+ * @returns {boolean} - Returns true if the string is a palindrome, false otherwise.
+ */
+function checkPalindrome(string) {
+    // Reverse the input string by splitting it into an array of characters, reversing the array, and joining it back into a string
+    let revserStr = string.split("").reverse().join("");
+
+    // Check if the original string is equal to the reversed string
+    return string === revserStr;
+}
+
+// Call the function with a sample input
+const value = checkPalindrome('nitin'); // 'nitin' is a palindrome
+console.log(value); // Output: true
+
+
+```
+### Method 2: Offically using for loop
 ```javascript
 /**
  * Function to check if a given string is a palindrome.
@@ -109,5 +133,48 @@ function checkPalindrome(string) {
 // Call the function with an example string
 const value = checkPalindrome('nitin'); // It is a palindrome, Nitin => it is not palindrome, Kunjan => it is not palindrome
 ```
+## Q4 => Function to remove the duplicate elements from an array
 
+### Method 1 : using filter() method
 
+```javascript
+
+/**
+ * Removes duplicate elements from an array.
+ *
+ * @param {Array} arr - The array from which duplicates will be removed.
+ * @returns {Array} - A new array with duplicates removed.
+ */
+let arr = [1,2,3,4,5,2,3];
+function removeDuplicates(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+}
+
+const finalVal = removeDuplicates(arr);
+console.log(finalVal); //[1,2,3,4,5]
+
+```
+### Method 2 : using indexOf() method
+
+```javascript
+/**
+ * Removes duplicate elements from an array.
+ * 
+ * @param {number[]} arr - The array from which duplicates are to be removed.
+ * @returns {number[]} A new array with duplicates removed.
+ */
+let arr = [1,2,3,4,2,3,6]
+function removeDuplicates(arr) {
+    let uniEle = []
+    for(let i = 0; i < arr.length; i++) {
+        if(uniEle.indexOf(arr[i]) == -1) {
+            uniEle.push(arr[i])
+        }
+    }
+    return uniEle
+}
+
+const finalVal = removeDuplicates(arr)
+console.log(finalVal); //[ 1, 2, 3, 4, 6 ]
+
+```

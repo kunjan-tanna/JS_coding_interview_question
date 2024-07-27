@@ -54,7 +54,7 @@ console.log('finalVal', finalVal);  // Output: yppaH
 ```
 
 ## Q2 => Function to longest word/string in a sentence
-
+```javascript
 /**
  * Function to find the longest word in a given sentence.
  * @param {string} str - The input sentence.
@@ -79,5 +79,6 @@ function findLongestWord(str) {
 const finalVal = findLongestWord("i want to be happy");
 
 console.log('finalVal', finalVal);  // Output: happy
+```
 
 

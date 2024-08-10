@@ -10,6 +10,7 @@
 8. Write a function to check if a given number is prime or not.
 9. Write a function to calculate the factorial of a number.
 10. Write a program to remove all whitespace characters from a string.
+11. Write an program for sort an array of object
 
 ## Q1 => Function to Reverse a String
 
@@ -369,3 +370,30 @@ function removeWhiteSpace(str) {
 const finalVal = removeWhiteSpace("    Happy Kunjan");
 console.log(finalVal); // HappyKunjan
 ```
+## Q11 => Write an program for sort an array of object
+### Method 1 : Acending order
+```javascript
+
+let employees = [
+  { name: 'John', dob: 'Dec 15, 2007', score: 80 },
+  { name: 'Ana', dob: 'Jan 15, 2009', score: 75 },
+  { name: 'Zion', dob: 'Feb 15, 2011', score: 90 },
+];
+
+employees.sort((a,b)=>a.score - b.score)
+
+console.log(employees) //ascending order
+```
+### Method 1 : Descending order
+```javascript
+
+let employees = [
+  { name: 'John', dob: 'Dec 15, 2007', score: 80 },
+  { name: 'Ana', dob: 'Jan 15, 2009', score: 75 },
+  { name: 'Zion', dob: 'Feb 15, 2011', score: 90 },
+];
+
+employees.sort((a,b)=>b.score - a.score)
+
+console.log(employees) //descending order
+

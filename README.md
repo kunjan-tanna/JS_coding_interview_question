@@ -11,6 +11,7 @@
 9. Write a function to calculate the factorial of a number.
 10. Write a program to remove all whitespace characters from a string.
 11. Write an program for sort an array of object
+12. Write an program for fibonacci series up to n terms.
 
 ## Q1 => Function to Reverse a String
 
@@ -396,4 +397,25 @@ let employees = [
 employees.sort((a,b)=>b.score - a.score)
 
 console.log(employees) //descending order
+
+```
+## Q11 => Write an program for fibonacci series up to n terms
+```javascript
+
+// program to generate fibonacci series up to n terms
+function fibNo(number){
+    let n1=0, n2=1, nextTerm;
+    
+    for(let i=1;i<=number;i++){
+        nextTerm = n1+n2
+        n1 = n2;
+        n2 = nextTerm
+        console.log(n2)
+    }
+     return n2;
+}
+
+const fibonacciNo = fibNo(8)
+console.log('fibonacciNo',fibonacciNo)
+```
 

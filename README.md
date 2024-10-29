@@ -12,6 +12,7 @@
 10. Write a program to remove all whitespace characters from a string.
 11. Write an program for sort an array of object
 12. Write an program for fibonacci series up to n terms.
+13. Write an program for showing the count for duplicate from string and return output object format
 
 ## Q1 => Function to Reverse a String
 
@@ -399,7 +400,7 @@ employees.sort((a,b)=>b.score - a.score)
 console.log(employees) //descending order
 
 ```
-## Q11 => Write an program for fibonacci series up to n terms
+## Q12 => Write an program for fibonacci series up to n terms
 ```javascript
 
 // program to generate fibonacci series up to n terms
@@ -417,5 +418,38 @@ function fibNo(number){
 
 const fibonacciNo = fibNo(8)
 console.log('fibonacciNo',fibonacciNo)
+```
+
+## Q13 => Write an program for showing the count for duplicate from string and return output object format
+```javascript
+const checkCount = checkData('ELEPHANT')
+console.log(checkCount)
+function checkData(str){
+    const spiltStr = str.split("")
+   
+    const newData = spiltStr.filter((item, index)=> spiltStr.indexOf(item) !== index)
+     console.log('newData',newData)
+    let count = 0;
+    let formData = {}
+     for(let latter of spiltStr)
+     {
+         
+         if(newData.includes(latter))
+         {
+             
+             count++;
+             console.log(latter)
+             formData[latter] = count
+             //console.log(formData)
+         }else{
+             formData[latter] = 1
+             //console.log(formData)
+            // count += 1
+         }
+     }
+     return formData
+}
+Output : { E: 2, L: 1, P: 1, H: 1, A: 1, N: 1, T: 1 }
+
 ```
 
